@@ -1,0 +1,46 @@
+<div class="products-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <div class="card-header">
+      <div class="product-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="card-content">
+      <h3 class="product-name">{{product.name}}</h3>
+      <div class="product-details">
+        <div class="price-tag">
+          <span class="currency">$</span>
+          <span class="amount">{{product.price}}</span>
+        </div>
+        <div class="quantity-info">
+          <span class="label">Stock</span>
+          <span class="value">{{product.quantity}}</span>
+        </div>
+      </div>
+    </div>
+    <div >
+      <button class="btn btn-primary" [disabled]="product.quantity === 0" (click)="buy(product)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<table class="table">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+    </tr>
+</table>
+-->
