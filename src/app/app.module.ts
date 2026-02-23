@@ -6,8 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { HearderComponent } from './hearder/hearder.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
-import { FormsModule } from '@angular/forms';
-import { ListSuggestionComponent } from './list-suggestion/list-suggestion.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SuggestionModule } from './suggestion/suggestion.module';
+import { AuthUserComponent } from './auth-user/auth-user.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { ListSuggestionComponent } from './list-suggestion/list-suggestion.compo
     HearderComponent,
     FooterComponent,
     ProductComponent,
-    ListSuggestionComponent
+    NotFoundComponent,
+    AuthUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     provideClientHydration()
